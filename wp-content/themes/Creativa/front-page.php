@@ -1,14 +1,10 @@
-<?php
-
-/*
-
-* T
-
-*/
-
-
-?>
+<?php error_reporting(E_ALL);
+ini_set("display_errors", 1);?>
 <?php get_header();?>
+<?php $hero = get_field('hero');?>
+<?php $services_area = get_field('services_area');?>
+<?php $about = get_field('about');?>
+<?php $about__image_gallery = get_field('about__image_gallery');?>
 
 <!-- Hero Start -->
 <section class="hero bg-hero-1 centered" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
@@ -17,16 +13,16 @@
         <div class="row">
             <div class="col-lg-6 col-md-12">
                 <div class="hero-text text-center text-lg-left">
-                    <h1 class="fading" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><?php echo  get_theme_mod('header_part-headline')?></h1>
-                    <h1 class="fading" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"> 
-                     <span><?php echo  get_theme_mod('header_part-headline1')?> </span></h1>
-                    <p class="sub-title fading" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">Web
-                        design and development agency that creates rich digital
-                        experiences
+                    <h1 class="fading" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><?php echo $hero['maine_title'];?></h1>
+
+                    <h1 class="fading" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><?php echo $hero['main_title2'];?> <span><?php echo $hero['coloured_main_title'];?></span></h1>
+                    <p class="sub-title fading" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><?php echo $hero['small_title'];?>
                     </p>
-                    <a class="button-work purple-gradient fading" href="http://melankolia.space/tf/creativora/index-1.html"
-                        style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">Start A
-                        Project</a>
+                    <?php if ($hero['link']):?>
+                    <a class="button-work purple-gradient fading" href="<?php echo $hero['link'];?>"
+                        style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><?php echo $hero['link_button'];?>
+                        </a>
+<?php endif;?>
                 </div>
             </div>
         </div>
@@ -43,8 +39,8 @@
 <section class="services mt-full fading" data-scroll-index="1" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
     <div class="container">
         <div class="title text-center mb-40">
-            <h2 class="title-text"><span>Services</span></h2>
-            <p>Good design is simple, clear and uncluttered.</p>
+            <h2 class="title-text"><span><?php echo $services_area['services_main_title'];?></span></h2>
+            <p><?php echo $services_area['services_small_text'];?></p>
             <div class="dash"></div>
         </div>
         <div class="row">
@@ -59,12 +55,8 @@
                         <div class="dots-4"></div>
                     </div>
                     <div class="service-text text-center">
-                        <h3>Website</h3>
-                        <p> Front-end Development,
-
-                            Back-end Development,
-
-                            E-commerce Solutions,
+                        <h3><?php echo $services_area['service_block1_title'];?></h3>
+                        <p> <?php echo $services_area['service_block1'];?>
                         </p>
                     </div>
                 </div>
@@ -80,16 +72,9 @@
                         <div class="dots-4"></div>
                     </div>
                     <div class="service-text text-center">
-                        <h3>Design</h3>
-                        <p>Graphic Design,
-
-                            Custom Illustration,
-
-                            Logo Design,
-
-                            Art Direction,
-
-                            Web Design </p>
+                    <h3><?php echo $services_area['service_block2_title'];?></h3>
+                        <p> <?php echo $services_area['service_block2'];?>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -104,14 +89,9 @@
                         <div class="dots-4"></div>
                     </div>
                     <div class="service-text text-center">
-                        <h3>Strategy </h3>
-                        <p>Initial Findings &amp; Research,
-
-                            Brand &amp; Advertising Strategy,
-
-
-
-                            User Journeys </p>
+                    <h3><?php echo $services_area['service_block3_title'];?></h3>
+                        <p> <?php echo $services_area['service_block3'];?>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -126,12 +106,9 @@
                         <div class="dots-4"></div>
                     </div>
                     <div class="service-text text-center">
-                        <h3>Copywriting</h3>
-                        <p>Creative Copy,
-
-                            Site Copy,
-
-                            SEO Copy </p>
+                    <h3><?php echo $services_area['service_block4_title'];?></h3>
+                        <p> <?php echo $services_area['service_block4'];?>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -146,16 +123,9 @@
                         <div class="dots-4"></div>
                     </div>
                     <div class="service-text text-center">
-                        <h3>Photography</h3>
-                        <p>Photo Shoots,
-
-                            Copywriting,
-
-                            Storyboarding,
-
-                            Filming,
-
-                            Editing </p>
+                    <h3><?php echo $services_area['service_block5_title'];?></h3>
+                        <p> <?php echo $services_area['service_block5'];?>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -170,12 +140,9 @@
                         <div class="dots-4"></div>
                     </div>
                     <div class="service-text text-center">
-                        <h3>Packaging</h3>
-                        <p>Package Design,
-
-                            Sustainable Packaging,
-
-                            All Types of Brand Identity </p>
+                    <h3><?php echo $services_area['service_block6_title'];?></h3>
+                        <p> <?php echo $services_area['service_block6'];?>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -191,8 +158,8 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2 ">
                 <div class="title text-center">
-                    <h2 class="title-text"><span>About</span></h2>
-                    <p>We're your Creative Agency, since 2010</p>
+                    <h2 class="title-text"><span><?php echo $about['about_main_title'];?></span></h2>
+                    <p><?php echo $about['about_small_title'];?></p>
                     <div class="dash"></div>
                 </div>
             </div>
@@ -211,49 +178,49 @@
                                     <div class="owl-item cloned">
                                         <div class="about-item">
                                             <figure class="red-gradient">
-                                                <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/images/slider-2.jpg" alt="about"/>
+                                          
                                             </figure>
                                         </div>
                                     </div>
                                     <div class="owl-item cloned">
                                         <div class="about-item">
                                             <figure class="dark-orange-gradient">
-                                                <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/images/slider-2.jpg" alt="about">
+                                            <img class="img-fluid"src="<?php echo $about__image_gallery['image1'];?>" alt="about">
                                             </figure>
                                         </div>
                                     </div>
                                     <div class="owl-item">
                                         <div class="about-item">
                                             <figure class="blue-gradient">
-                                                <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/images/slider-1.jpg" alt="about">
+                                            <img class="img-fluid"src="<?php echo $about__image_gallery['image2'];?>" alt="about">
                                             </figure>
                                         </div>
                                     </div>
                                     <div class="owl-item">
                                         <div class="about-item">
                                             <figure class="red-gradient">
-                                                <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/images/slider-2.jpg" alt="about">
+                                            <img class="img-fluid"src="<?php echo $about__image_gallery['image3'];?>" alt="about">
                                             </figure>
                                         </div>
                                     </div>
                                     <div class="owl-item active">
                                         <div class="about-item">
                                             <figure class="dark-orange-gradient">
-                                                <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/images/slider-2.jpg" alt="about">
+                                            <img class="img-fluid"src="<?php echo $about__image_gallery['image4'];?>" alt="about">
                                             </figure>
                                         </div>
                                     </div>
                                     <div class="owl-item cloned">
                                         <div class="about-item">
                                             <figure class="blue-gradient">
-                                                <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/images/slider-1.jpg" alt="about">
+                                            <img class="img-fluid"src="<?php echo $about__image_gallery['image5'];?>" alt="about">
                                             </figure>
                                         </div>
                                     </div>
                                     <div class="owl-item cloned">
                                         <div class="about-item">
                                             <figure class="red-gradient">
-                                                <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/images/slider-2.jpg" alt="about">
+                                            <img class="img-fluid"src="<?php echo $about__image_gallery['image6'];?>" alt="about">
                                             </figure>
                                         </div>
                                     </div>
@@ -270,10 +237,8 @@
             </div>
             <div class="col-lg-5 centered">
                 <div class="about-text text-center text-lg-left mt-mobile">
-                    <h2>Who We Are</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt quas
-                        dolore, exercitationem, quisquam aspernatur at temporibus possimus fugiat fugit nulla iusto
-                        illum delectus iure architecto ea, ex assumenda? Quia, voluptatibus?</p>
+                    <h2><?php echo $about['about_desc1_title'];?></h2>
+                    <p><?php echo $about['about_desc1'];?></p>
                 </div>
             </div>
             <div class="col-lg-6">

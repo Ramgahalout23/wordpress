@@ -49,8 +49,8 @@
 						wp_nav_menu(array(
                             'theme_location' =>'primary',   
                             'menu_class'=>'navbar-nav ml-auto align-items-center',
-                            'link_before' => '<a  class="nav-link"  data-scroll-nav="1" style="transform: matrix(1, 0, 0, 1, 0, 0);">',
-                            'link_after' => '</a>',
+                            'link_before' => '<li><a  class="nav-link"  data-scroll-nav="1" style="transform: matrix(1, 0, 0, 1, 0, 0);">',
+                             'link_after' =>'<a/></li>'
                             
                            
                         ))
